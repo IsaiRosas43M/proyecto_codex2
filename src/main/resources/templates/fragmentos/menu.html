@@ -11,11 +11,11 @@
             <li class="nav-item">
               <a class="nav-link active" th:href="@{/}">Inicio</a>
             </li>
-            <li class="nav-item"  sec:authorize="hasAnyAuthority('Supervisores','Administrador')">
+            <li class="nav-item"  sec:authorize="hasAnyAuthority('Supervisor','Administrador')">
              <!-- <a class="nav-link" th:href="@{/categorias/index}">Categorias</a> -->
              <a class="nav-link" th:href="@{/categorias/indexPaginado}">Categorias</a>
             </li>
-            <li class="nav-item" sec:authorize="hasAnyAuthority('Supervisores','Administrador')">
+            <li class="nav-item" sec:authorize="hasAnyAuthority('Supervisor','Administrador')">
               <!--<a class="nav-link" th:href="@{/vacantes/index}">Vacantes</a> -->
               <a class="nav-link" th:href="@{/vacantes/indexPaginado}">Vacantes</a>
             </li>
@@ -27,7 +27,7 @@
               <a class="nav-link" th:href="@{/acerca}">acerca</a>
             </li>           
           </ul>  
-          <a class="btn bg-light text-dark" th:href="@{/vacantes/indexPaginado}">Ingresar</a>&nbsp;
+          <a class="btn bg-success text-light" th:href="@{/login?logout}">Ingresar</a>&nbsp;
           <a class="btn bg-light text-dark" th:href="@{/crear}">Registrarse</a>&nbsp;
           <a class="btn bg-light text-dark" th:href="@{/logout}">Salir</a>
         </div>

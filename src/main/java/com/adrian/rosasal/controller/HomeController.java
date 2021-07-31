@@ -37,7 +37,7 @@ public class HomeController {
 		System.out.println(usuario);
 		usuariosService.guardar(usuario);
 		
-		return "formLogin";
+		return "redirect:/login?logout";
 	}
 	
 	@GetMapping("/crear")
