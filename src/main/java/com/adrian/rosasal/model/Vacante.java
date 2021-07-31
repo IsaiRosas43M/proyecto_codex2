@@ -17,7 +17,7 @@ import javax.validation.constraints.Pattern;
 
 
 @Entity
-@Table(name="Vacantes")
+@Table(name="vacantes")
 public class Vacante {
 
 	@Id

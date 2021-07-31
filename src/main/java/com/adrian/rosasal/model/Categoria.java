@@ -9,7 +9,7 @@ import javax.persistence.Table;
 //JavaBean o Pojo
 //
 @Entity
-@Table(name="Categorias")
+@Table(name="categorias")
 public class Categoria {
 	
 	@Id

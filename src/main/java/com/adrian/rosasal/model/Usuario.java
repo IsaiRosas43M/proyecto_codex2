@@ -15,7 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Usuarios")
+@Table(name = "usuarios")
 public class Usuario {
 	
 	@Id
@@ -29,7 +29,7 @@ public class Usuario {
 	private LocalDate fechaRegistro;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name="UsuarioPerfil",
+	@JoinTable(name="usuarioperfil",
 				joinColumns=@JoinColumn(name="idUsuario"),
 				inverseJoinColumns = @JoinColumn(name="idPerfil")) 
 				
