@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 
 import com.adrian.rosasal.model.Categoria;
 
+
 public interface IntCategoriasService {
 	
 	public List<Categoria> obtenerTodas();

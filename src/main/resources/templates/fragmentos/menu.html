@@ -13,16 +13,19 @@
             </li>
             <li class="nav-item"  sec:authorize="hasAnyAuthority('Supervisor','Administrador')">
              <!-- <a class="nav-link" th:href="@{/categorias/index}">Categorias</a> -->
-             <a class="nav-link" th:href="@{/categorias/indexPaginado}">Categorias</a>
+             <a class="nav-link" th:href="@{/categorias/indexPaginado}">Micas</a>
             </li>
             <li class="nav-item" sec:authorize="hasAnyAuthority('Supervisor','Administrador')">
               <!--<a class="nav-link" th:href="@{/vacantes/index}">Vacantes</a> -->
-              <a class="nav-link" th:href="@{/vacantes/indexPaginado}">Vacantes</a>
+              <a class="nav-link" th:href="@{/vacantes/indexPaginado}">Armazones</a>
             </li>
             <li class="nav-item" sec:authorize="hasAnyAuthority('Administrador')">
               <!--<a class="nav-link" th:href="@{/vacantes/index}">Vacantes</a> -->
               <a class="nav-link" th:href="@{/usuarios/indexPaginado}">Usuarios</a>
             </li>
+            <li class="nav-item" sec:authorize="hasAnyAuthority('Administrador', 'Usuario')">
+                    <a class="nav-link active" th:href="@{/usuarioV/index}">Citas</a>
+                </li>
             <li class="nav-item">
               <a class="nav-link" th:href="@{/acerca}">acerca</a>
             </li>           

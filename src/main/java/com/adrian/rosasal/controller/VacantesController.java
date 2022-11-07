@@ -48,8 +48,7 @@ private String ruta;
     public IntCategoriasService categoriasService;
     
     @GetMapping("/buscar")
-    public String buscar(@RequestParam("id") int idVacante,
-    		Model model) {
+    public String buscar(@RequestParam("id") int idVacante,Model model) {
     	Vacante vacante = vacantesService.buscarPorId(idVacante);
     	model.addAttribute("vacante", vacante);
     	return "vacantes/formVacante";
@@ -102,7 +101,7 @@ private String ruta;
         vacante.setCategoria(categoriasService.buscarPorId(vacante.getCategoria().getId()));
         //guardar
         vacantesService.guardar(vacante);
-        atributo.addFlashAttribute("msg", "¡La vacante se ha guardado!");
+        atributo.addFlashAttribute("msg", "¡El Armazon se ha guardado!");
         //Mostrar la vista
         return "redirect:/vacantes/indexPaginado";
 

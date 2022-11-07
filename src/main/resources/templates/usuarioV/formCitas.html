@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citas</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+    <link th:href="@{/https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css}" rel="stylesheet" >
+  </head>
+<body style="color: black;">
+
+<header th:insert="fragmentos/menu.html::menu-principal">
+</header>
+    <div style="margin-top: 90px;">
+                <form method="post" th:action="@{/usuarioV/guardar}" th:object="${citas}" enctype="multipart/form-data">              
+            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger" role="alert">
+                <ol>
+                <li th:each="error:${#fields.errors('*')}" th:text="${error}"></li>
+                </ol>
+            </div>
+<div class="row">
+<div class="col-md-3"> 
+<div class="form-group">
+<input type="hidden" th:field="*{id}">
+<label>Nombre</label>
+<input type="text" id="nombre" name="nombre" class="form-control" th:field="*{nombre}" placeholder="Ingrese sus nombre(s)" required="required">
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+<label>Hora</label>
+<input type="time" class="form-control" id="hora" name="hora" th:field="*{hora}" placeholder="Ingrese la hora de su cita" required="required">
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+<label>Fecha</label>
+<label for="fecha">Fecha de Publicación</label>
+<input type="date" class="form-control" id="fecha" name="fecha" th:field="*{fecha}" placeholder="Fecha de publicacion" required="required">
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+<label>Servicio</label>
+<input type="text" class="form-control" id="servicio" name="servicio" th:field="*{servicio}" placeholder="Ingrese el servicio que desea adquirir" required="required">
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="form-group">
+<label>Precio</label>
+<input type="double" class="form-control" id="precio" name="precio" th:field="*{precio}" placeholder="Precio" required="required">
+</div>
+</div>
+
+</div>
+<button type="submit" title="Guardar." class="btn text-white" style="background-color:red">Guardar</button>
+</form>
+</div>
+</div>
+</div> <!-- /container -->
+</main>
+<footer class="footer">
+<div class="container">
+</div>
+</footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>    
+  </body>
+</html>

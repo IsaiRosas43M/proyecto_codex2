@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>EmpleosApp | Detalles de la Oferta de Trabajo</title>
+    <title>Optica OR | Detalles del Armazon</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -33,14 +33,14 @@
             <div class="card">
               <h4 class="card-header">Aplicar para <strong th:text="${vacante.nombre}"></strong></h4>              
               <div class="card-body">
-                <h5 class="card-title"><strong>Categoría: </strong> <span th:text="${vacante.categoria.nombre}"> </span></h5>
+                <h5 class="card-title"><strong>Marca: </strong> <span th:text="${vacante.categoria.nombre}"> </span></h5>
                 <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${vacante.fecha}"> </span></h6>                
-                <h6 class="card-title"><strong>Salario Ofrecido: </strong><span th:text="'$' + ${vacante.salario}"></span></h6>
+                <h6 class="card-title"><strong>Precio: </strong><span th:text="'$' + ${vacante.salario}"></span></h6>
                 <p class="card-text" th:text="${vacante.descripcion}"></p>
                 
                 <div class="card bg-light mb-3" >
                   <div class="card-body">
-                    <h5 class="card-title">Detalles de la oferta de trabajo</h5>
+                    <h5 class="card-title">Detalles del Armazon</h5>
                     <p class="card-text" th:utext="${vacante.detalles}"></p>
                   </div>
                 </div>   

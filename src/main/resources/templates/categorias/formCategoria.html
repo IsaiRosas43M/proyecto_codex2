@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>EmpleosApp | Creación de Categorías</title>
+    <title>Optica OR | Creación de Micas</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -26,7 +26,7 @@
       <div class="container"> 
 
         <div class="card">
-          <h4 class="card-header"><strong>Datos de la categoría</strong></h4>              
+          <h4 class="card-header"><strong>Datos de la Mica</strong></h4>              
           <div class="card-body">
             <form method="post" th:action="@{/categorias/guardar}"  th:object="${categoria}">              
               <div class="row">
@@ -36,7 +36,15 @@
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre" placeholder="Escriba el nombre de la categoria" required="required">
                   </div>
-                </div>                
+                </div>  
+                
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="archivoImagen">Imagen</label>
+                    <input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen">
+                  </div>
+                </div>
+                              
               </div> 
               <div class="row">
                 <div class="col-md-6"> 

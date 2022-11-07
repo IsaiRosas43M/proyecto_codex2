@@ -33,6 +33,7 @@ public class VacantesServiceImp implements IntVacantesService {
 			v1.setEstatus("Creada");
 			v1.setImagen("logo19.png");
 			v1.setDetalles("<h3><strong>Amplia Experiencia</strong></h3>");
+			
 			Categoria c1 = new Categoria();
 			c1.setId(2);
 			c1.setNombre("Contabilidad");

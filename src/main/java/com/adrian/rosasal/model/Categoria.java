@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 //JavaBean o Pojo
@@ -17,6 +19,9 @@ public class Categoria {
 	private Integer id;
 	private String nombre;
 	private String descripcion;
+	private String imagen="logo de empresa.png";
+	
+	
 	
 	public Integer getId() {
 		return id;
@@ -37,9 +42,20 @@ public class Categoria {
 		this.descripcion = descripcion;
 	}
 	
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	
+	
+	
+	
+	
 	@Override
 	public String toString() {
-		return "Categoria [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
+		return "Categoria [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ",imagen=" + imagen +  "]";
 	}
 	
 	

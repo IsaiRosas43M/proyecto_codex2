@@ -29,7 +29,7 @@
         <div class="card">
           <h4 class="card-header"><strong>Listado de Armazones</strong></h4>              
           <div class="card-body">
-            <a class="btn btn-secondary text-white" th:href="@{/vacantes/crear}" title="Crear nueva Oferta de Trabajo" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
+            <a class="btn btn-secondary text-white" th:href="@{/micas/crear}" title="Crear nueva Oferta de Trabajo" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
             <hr>
             <div class="alert alert-success" role="alert"
             		th:if="${msg != null}"
@@ -41,34 +41,28 @@
                 <tr>
                 	<th scope="col">Id</th>
                 	<th scope="col">Logo</th>
-                  <th scope="col">Categoría</th>
                   <th scope="col">Nombre</th>                  
-                  <th scope="col">Fecha Pub.</th>
-                  <th scope="col">Estatus</th>
-                  <th scope="col">Destacada</th>
                   <th scope="col">Operaciones</th>
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="vacante:${vacantes}">
-                 <td th:text="${vacante.id}"></td>
-                 <td><img th:src="@{/images/{img}(img=${vacante.imagen})}" width="40" ></td> 
-                  <td th:text="${vacante.categoria.nombre}"></td>
-                  <td th:text="${vacante.nombre}"></td>                  
-                  <td th:text="${vacante.fecha}"></td>
-                  <td th:text="${vacante.estatus}"></td>
+                <tr th:each="micas:${mica}">
+                 <td th:text="${mica.id}"></td>
+                 <td><img th:src="@{/images/{img}(img=${mica.imagen})}" width="40" ></td> 
+                  <td th:text="${mica.nombre}"></td>                  
+                 
                <!--   <td th:text="${vacante.destacado}"></td> -->
                <!--	<td th:text="${vacante.destacado == 1?'Si':'No'}"></td> > -->
                <td>
-               <span th:if="${vacante.destacado == 1}"class="badge bg-primary">Si</span>
-			<span th:unless="${vacante.destacado == 1}"class="badge bg-secondary">No</span>
+               <span th:if="${mica.destacado == 1}"class="badge bg-primary">Si</span>
+			<span th:unless="${mica.destacado == 1}"class="badge bg-secondary">No</span>
                
                </td>
                
                   <td>
-                    <a th:href="@{/vacantes/buscar(id=${vacante.id})}" class="btn btn-secondary btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-                    <a th:href="@{/vacantes/eliminar(id=${vacante.id})}" onclick="return confirm('¿Estas seguro?')" class="btn btn-danger btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
-                    <a th:href="@{/vacantes/detalle(id=${vacante.id})}" class="btn btn-secondary btn-sm" role="button" title="Detalles del registro."><i class="far fa-file-alt"></i></a>
+                    <a th:href="@{/micas/buscar(id=${vacante.id})}" class="btn btn-secondary btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a th:href="@{/micas/eliminar(id=${vacante.id})}" onclick="return confirm('¿Estas seguro?')" class="btn btn-danger btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
+                    <a th:href="@{/micas/detalle(id=${vacante.id})}" class="btn btn-secondary btn-sm" role="button" title="Detalles del registro."><i class="far fa-file-alt"></i></a>
                   
                   </td>
                 </tr>

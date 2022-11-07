@@ -22,21 +22,27 @@ public class CategoriasServiceImp implements IntCategoriasService {
 		c1.setId(1);
 		c1.setNombre("Vigilancia");
 		c1.setDescripcion("Para seguridad bancaria");
+		c1.setImagen("logo19.png");
+		
+		
 		
 		Categoria c2 = new Categoria();
 		c2.setId(2);
 		c2.setNombre("Contabilidad");
 		c2.setDescripcion("Relacionado con contabilidad y finanzas");
+		c2.setImagen("logo19.png");
 		
 		Categoria c3 = new Categoria();
 		c3.setId(3);
 		c3.setNombre("Administracion");
 		c3.setDescripcion("relacionado de administrar datos");
+		c3.setImagen("logo19.png");
 		
 		Categoria c4 = new Categoria();
 		c4.setId(4);
 		c4.setNombre("Ingenieria");
 		c4.setDescripcion("Relacionado con areas de ingenieria");
+		c4.setImagen("logo19.png");
 		
 		lista.add(c1);
 		lista.add(c2);

@@ -58,4 +58,9 @@ public class HomeController {
 		return "home";
 	}
 	
+	@GetMapping("/vacantes/agendarCitas")
+	public String agendarCitas() {
+		return "/vacantes/agendarCitas";
+	}
+	
 }

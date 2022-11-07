@@ -12,7 +12,7 @@
 
  
 
-  <title>EmpleosApp | Aplicación para publicar Ofertas de Trabajo.</title>
+  <title>Optica OR | Aplicación para ventas de Armazones y Micas.</title>
   <!-- Bootstrap core CSS -->
   <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -44,8 +44,8 @@
 
     <div class="container-fluid">
       <div class="jumbotron  bg-gradient-dark">
-        <h4>Encuentra el trabajo que andas buscando.</h4>
-        Puedes buscar por descripción y categoría.
+        <h4>Encuentra el Armazon que mas buscas.</h4>
+        Puedes buscar por descripción y nombre.
         <form class="form-inline">
           <input type="text" class="form-control mb-3" id="exampleFormControlInput1"
             placeholder="Escriba una búsqueda">&nbsp;
@@ -62,7 +62,7 @@
       </div>
     </div>
     <div class="container">
-      <h4 class="font-weight-bold text-center text-capitalize text-dark">Vacantes Destacadas</h4>
+      <h4 class="font-weight-bold text-center text-capitalize text-dark">Armazones Destacados</h4>
       <div class="row" th:each="vacante:${vacantes}">
         <div class="col-md-3">
           <img class="rounded mx-auto d-block" th:src="@{/images/{img}(img=${vacante.imagen})}" alt="Generic placeholder image" width="220"
@@ -70,7 +70,7 @@
         </div>
         <div class="col-md-9">
           <h2 th:text="${vacante.nombre}"></h2>
-          <h6 class="card-title"><strong>Categoría: </strong> <span th:text="${vacante.categoria.nombre}"></span></h6>
+          <h6 class="card-title"><strong>Marca: </strong> <span th:text="${vacante.categoria.nombre}"></span></h6>
           <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${vacante.fecha}"></span></h6>
           <p th:text="${vacante.descripcion}"></p>
           <p><a class="btn btn-secondary" th:href="@{/vacantes/detalle(id=${vacante.id})}" role="button">Ver detalles &raquo;</a></p>

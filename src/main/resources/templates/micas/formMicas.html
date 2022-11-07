@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Optica OR | Creación de Armazones</title>
+    <title>Optica OR | Creación de Micas</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -30,8 +30,8 @@
         <div class="card">
           <h4 class="card-header"><strong>Datos del Armazon</strong></h4>              
           <div class="card-body">
-            <form method="post" th:action="@{/vacantes/guardar}"
-            		th:object="${vacante}"
+            <form method="post" th:action="@{/micas/guardar}"
+            		th:object="${mica}"
             		enctype="multipart/form-data"
             >              
             <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger" role="alert">
@@ -55,60 +55,7 @@
                     <input type="text" class="form-control" id="descripcion" th:field="*{descripcion}" name="descripcion" placeholder="Breve descripcion del armazon" required="required">
                   </div> 
                 </div>    
-              </div>    
-              <div class="row">
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="categoria">Mica</label>
-                    <select class="form-control" th:field="*{categoria.id}" name="categoria" id="categoria">
-                      <option th:each="categoria:${categorias}" 
-                      th:value="${categoria.id}" 
-                      th:text="${categoria.nombre}"></option>
-                      <!--<option value="2">Contabilidad</option>
-                      <option value="3">Transporte</option>
-                      <option value="4">Informatica</option>
-                      <option value="5">Construccion</option>-->
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="estatus">Estatus</label>
-                    <select class="form-control" th:field="*{estatus}" name="estatus" id="estatus">
-            <option value="Creada">Creada</option>
-                      <option value="Aprobada">Agotado</option>
-                      <option value="Eliminada">Eliminada</option>  
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="fecha">Fecha de Publicación</label>
-                    <input type="text" class="form-control" th:field="*{fecha}" name="fecha" id="fecha" placeholder="Fecha de publicacion del armazon" required="required">
-                  </div>  
-                </div>
-                <div class="col-md-3"> 
-                  <div class="form-check">
-                    <label class="form-check-label" for="destacado0"></label><br>
-                    <input class="form-check-input" type="radio" th:field="*{destacado}" name="destacado" id="destacado" value="1" checked="checked">
-                    <label class="form-check-label" for="destacado1">Destacado</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" th:field="*{destacado}" name="destacado" id="destacado" value="0">
-                    <label class="form-check-label" for="destacado2">No Destacado</label>
-                  </div>
-                </div>
-              </div>    
-              <div class="row">
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="salario">Precio</label>
-                    <input type="text" class="form-control" th:field="*{salario}" name="salario" id="salario" 
-                    placeholder="Salario aproximado." required="required">
-                    <small class="form-text text-danger" th:if="${#fields.hasErrors('salario')}" th:errors="*{salario}"></small>
-                  </div>
-                </div>
+              </div>          
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="archivoImagen">Imagen</label>
@@ -117,16 +64,10 @@
                 </div>
               </div> 
               <hr>
-              <div class="row">
-                <div class="col-md-9"> 
-                  <div class="form-group">
-                    <label for="detalles"><strong>Detalles</strong></label>          
-                    <textarea class="form-control" name="detalles" th:field="*{detalles}" id="detalles" rows="7"></textarea>
-                  </div> 
-                </div> 
+               
                 <div class="col-md-3">
                   <label for="imagen">Imagen/Logo</label>
-                  <img class="rounded mx-auto d-block" th:src="@{/logos/{img}(img=${vacante.imagen})}" alt="Generic placeholder image" width="200" height="200">            
+                  <img class="rounded mx-auto d-block" th:src="@{/logos/{img}(img=${mica.imagen})}" alt="Generic placeholder image" width="200" height="200">            
                 </div>
               </div> 
               <button type="submit" class="btn btn-secondary text-white">Guardar</button>  
@@ -151,10 +92,7 @@
     <script th:src="@{/tinymce/tinymce.min.js}"></script>
     <script>
       
-      $(function () {
-          $("#fecha").datepicker({dateFormat: 'dd-mm-yy'});
-        }
-      );
+      
       
       
       tinymce.init({
